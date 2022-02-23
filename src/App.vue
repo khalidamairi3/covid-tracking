@@ -9,6 +9,8 @@
           min-width="100"
           src="https://media-s3-us-east-1.ceros.com/abc/images/2020/10/13/8a34b0cef8823bd2dbdd6b9b2113c70f/living-in-the-times-of-covid-logo-white.svg"
           width="100"
+          @click="goHome"
+          id="logo"
         />
       </div>
 
@@ -28,5 +30,15 @@ export default {
   data: () => ({
     //
   }),
+  methods: {
+    goHome() {
+      this.$router.push("/");
+    },
+  },
 };
 </script>
+<style scoped>
+#logo {
+  cursor: pointer;
+}
+</style>

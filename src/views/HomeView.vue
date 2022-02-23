@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <LandingImage />
-    <GlobalChart />
+    <GlobalChart v-if="global.NewDeaths != undefined" />
     <CountriesTable />
   </div>
 </template>
@@ -19,6 +19,11 @@ export default {
     LandingImage,
     CountriesTable,
     GlobalChart,
+  },
+  computed: {
+    global() {
+      return this.$store.state.global;
+    },
   },
 };
 </script>

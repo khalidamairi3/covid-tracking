@@ -1,6 +1,10 @@
 <template>
   <div id="country-card">
-    <v-card class="mx-auto" max-width="600">
+    <v-card
+      v-if="countryInfo.capital != undefined"
+      class="mx-auto"
+      max-width="500"
+    >
       <v-img
         class="white--text align-end"
         height="200px"
@@ -63,7 +67,6 @@ import axios from "axios";
 export default {
   name: "country-view",
   mounted() {
-    this.getCovidData();
     this.getCountryInfo();
   },
   computed: {
@@ -73,25 +76,10 @@ export default {
   },
   data() {
     return {
-      daysCases: [],
       countryInfo: {},
     };
   },
   methods: {
-    getCovidData() {
-      axios
-        .request({
-          url:
-            "https://api.covid19api.com/live/country/" + this.country.Country,
-          method: "GET",
-        })
-        .then((response) => {
-          this.daysCases = response.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
     getCountryInfo() {
       axios
         .request({
@@ -118,6 +106,6 @@ export default {
 #country-card {
   //   position: relative;
   width: 80%;
-  margin: 10%;
+  margin: 5% 10%;
 }
 </style>

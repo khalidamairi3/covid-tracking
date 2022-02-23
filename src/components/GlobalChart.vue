@@ -11,9 +11,6 @@ import Chart from "chart.js/auto";
 export default {
   name: "global-chart",
   async mounted() {
-    if (this.global == undefined) {
-      await this.$store.dispatch("getSummary");
-    }
     const ctx = document.getElementById("new-chart");
     const config = {
       type: "doughnut",
