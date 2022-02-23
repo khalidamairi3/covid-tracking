@@ -1,5 +1,6 @@
 <template>
   <div id="countries-table">
+    <h2>Click on the country to show more details</h2>
     <v-data-table
       :headers="headers"
       :items="countries"
