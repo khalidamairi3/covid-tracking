@@ -19,13 +19,18 @@
 
     <v-main>
       <router-view />
+      <pageFooter />
     </v-main>
   </v-app>
 </template>
 
 <script>
+import pageFooter from "./components/footer.vue";
 export default {
   name: "App",
+  components: {
+    pageFooter,
+  },
 
   data: () => ({
     //
